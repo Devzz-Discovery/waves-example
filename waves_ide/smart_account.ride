@@ -1,0 +1,12 @@
+{-# STDLIB_VERSION 5 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+
+@Verifier(tx)
+func verify() = {
+    match tx {
+        case d: SetScriptTransaction => true
+        case d: DataTransaction => true
+        case _ => false 
+    }
+}
