@@ -20,7 +20,7 @@ describe('Coupon bazar test suite', async function () {
 
         await setupAccounts({bazar: BAZAR_WAVES, supplier: SUPPLIER_WAVES, customer: CUSTOMER_WAVES});
         
-        const scriptC = compile(file('addItem.ride'));
+        const scriptC = compile(file('bazar.ride'));
         const ssTx = setScript({script:scriptC}, accounts.bazar);
         await broadcast(ssTx);
         await waitForTx(ssTx.id)
